@@ -18,3 +18,75 @@ header{
     font-size: 50px;
 }
 
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.settings{
+    width: 250px;
+    height: 500px;
+    background-color: rgb(203, 232, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.btn{
+    width: 150px;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    font-size: 15px;
+    font-weight: bolder;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-black{
+    border:1px solid #070707;
+}
+
+.btn-black:hover{
+    background-color: rgb(68, 64, 64);
+    color: whitesmoke;
+}
+
+.btn:hover{
+    padding: 15px;
+    width: 155px;
+    border: 0;
+    color: whitesmoke;
+}
+
+.btn-rc{
+    border-top: 1px solid rgb(0, 255, 76);
+    border-bottom: 1px solid rgb(245, 37, 0);
+    border-left: 1px solid rgb(3, 108, 245);
+    border-right: 1px solid rgb(245, 221, 3);
+}
+
+.btn-rc:hover{
+    background: linear-gradient(rgb(226, 173, 173), rgb(235, 207, 156), rgb(235, 235, 149), rgb(142, 223, 142), rgb(147, 231, 231), rgb(136, 136, 236), rgb(228, 149, 228));
+    color: rgb(255, 254, 254);
+}
+
+.reset{
+    border: 1px solid red;
+}
+
+.reset:hover{
+    background-color: rgb(240, 127, 127);
+}
+
+.gridSize{
+    border: 1px solid green;
+}
+
+.gridSize:hover{
+    background-color: rgb(128, 209, 128);
+}
