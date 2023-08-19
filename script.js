@@ -39,4 +39,11 @@ const randomColorGenerate = function() {
 const randomBtn = document.querySelector('.btn-rc');
 randomBtn.addEventListener('click', randomColorGenerate);
 
-
+// when user click on reset the grid color will change into white
+const resetBtn = document.querySelector('.reset')
+resetBtn.addEventListener('click',function(){
+    const itemsElement = document.querySelectorAll('.items')
+    itemsElement.forEach(item =>{
+        item.style.backgroundColor = 'white';
+    })
+})
