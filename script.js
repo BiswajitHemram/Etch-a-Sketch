@@ -1,7 +1,7 @@
 const sketch = document.querySelector('.sketchBox') //declaring sketch global
 // defaultGridSize() work is generate default  div box for grid of 16*16
 function defaultGridSize(){
-    console.log(sketch)
+    // console.log(sketch)
     for(let i=0; i<256; i++){
         const box = document.createElement('div')
         box.classList.add('items')
@@ -24,4 +24,19 @@ const blackColorBtn = ()=>{
     }
 const blackBtn = document.querySelector('.btn-black')
 blackBtn.addEventListener('click',blackColorBtn)
+
+// when user click on random btn it generate random color for grid background 
+const randomColorGenerate = function() {
+    const randomNumber = () => Math.floor(Math.random() * 256);
+    const rgbColor = `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`;
+    sketch.addEventListener('mouseover', (event) => {
+        if (event.target.classList.contains('items')) {
+            event.target.style.backgroundColor = rgbColor;
+        }
+    })
+}
+
+const randomBtn = document.querySelector('.btn-rc');
+randomBtn.addEventListener('click', randomColorGenerate);
+
 
