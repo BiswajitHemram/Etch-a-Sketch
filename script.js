@@ -1,18 +1,20 @@
 const sketch = document.querySelector('.sketchBox') //declaring sketch global
 // defaultGridSize() work is generate default  div box for grid of 16*16
-function defaultGridSize(){
+let size = 16
+function defaultGridSize(size){
     // console.log(sketch)
-    for(let i=0; i<256; i++){
+    const gridSize = size * size
+    for(let i=0; i<gridSize; i++){
         const box = document.createElement('div')
         box.classList.add('items')
         sketch.appendChild(box)
     }
-    const columnCount = 16;
-    const rowCount = 16;
+    const columnCount = size;
+    const rowCount = size;
     sketch.style.setProperty('--column-count', columnCount)
     sketch.style.setProperty('--row-count', rowCount)
 }
-window.addEventListener('load',defaultGridSize)
+window.addEventListener('load',defaultGridSize(size))
 
 // when ever user click on black button than mouse over on grid change into black 
 const blackColorBtn = ()=>{
@@ -47,3 +49,21 @@ resetBtn.addEventListener('click',function(){
         item.style.backgroundColor = 'white';
     })
 })
+
+// user input for grid layout change 1 to 64
+const gridSize = function(){
+    input = prompt("Enter the Size of grid 1 to 64") 
+    const checkCorrectInput = /^[1-9][0-9]?$|^64$/;
+    if(!input.match(checkCorrectInput)){
+        alert('Please a valid number')
+    }
+    else{
+        const itemsElement = document.querySelectorAll('.items')
+        itemsElement.forEach(item =>{
+            sketch.removeChild(item);
+        })
+        defaultGridSize(input)
+    }
+}
+const gridBtn = document.querySelector('.gridSize')
+gridBtn.addEventListener('click',gridSize)
