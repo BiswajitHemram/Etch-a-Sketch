@@ -90,3 +90,13 @@ header{
 .gridSize:hover{
     background-color: rgb(128, 209, 128);
 }
+
+.sketchBox{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border: 1px solid rgb(94, 91, 91);
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), 1fr);
+    grid-template-rows: repeat(var(--row-count), 1fr);
+}
